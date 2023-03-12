@@ -18,6 +18,7 @@ class _loginState extends State<login> {
   @override
   Widget build(BuildContext context) {
     return Material(
+      color: Colors.white,
 
       child: SingleChildScrollView(
         
@@ -28,9 +29,10 @@ class _loginState extends State<login> {
               SizedBox(
                 height: 50,
               ),
-              CircleAvatar(
-                backgroundImage: AssetImage('assets/images/fahim.png'),
-                radius: 40,
+              Image.asset(
+                'assets/images/nub.png',
+                height: 90,
+                width: 100,
               ),
               SizedBox(
                 height: 30,
@@ -43,8 +45,8 @@ class _loginState extends State<login> {
               Text("Login",
                 style: TextStyle(fontSize: 30, color: Colors.red, fontWeight: FontWeight.bold),
               ),
-              Text("$name",
-                style: TextStyle(fontSize: 30, color: Colors.red, fontWeight: FontWeight.bold),
+              Text("Your ID- $name",
+                style: TextStyle(fontSize: 10, color: Colors.black, fontWeight: FontWeight.bold),
               ),
 
               Padding(padding:
@@ -52,13 +54,14 @@ class _loginState extends State<login> {
                 child: Column(
                   children: [
                     TextFormField(
+                      keyboardType: TextInputType.number,
                       decoration: InputDecoration(
-                        hintText: ("E-mail"),
-                        labelText: ("Enter E-mail")
+                        hintText: ("NUB ID"),
+                        labelText: ("Enter NUB ID")
                       ),
                       validator: (value){
                         if (value!.isEmpty){
-                          return "Please Enter the E-mail";
+                          return "Please Enter your ID";
                         }
                         return null;
                       },
@@ -81,8 +84,8 @@ class _loginState extends State<login> {
                         if (value!.isEmpty) {
                           return "Password can't be empty";
                         }
-                        else if(value!.length<4){
-                          return "Please Enter Long Password";
+                        else if(value!.length<6){
+                          return "Please Enter 6 digit Password";
                         }
 
                         null;
@@ -94,7 +97,7 @@ class _loginState extends State<login> {
                     ElevatedButton(
                         onPressed: () => moveToHome(context),
 
-                        child: Text("Login", style: TextStyle(
+                        child: Text("LOGIN", style: TextStyle(
                           fontSize: 40,
                         ), ),
                     )
