@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_demo/pages/drawer.dart';
 
 class homepage extends StatelessWidget {
 
@@ -23,12 +24,14 @@ class homepage extends StatelessWidget {
 
            ),
            TextButton(
-             child: Text("Fahim"),
+             child: Text("NUB Notice", style: TextStyle(
+               fontSize: 50
+             ),),
            onPressed: null),
          ],
        ),
       ),
-
+      drawer: drawerApp(),
     );
   }
 }

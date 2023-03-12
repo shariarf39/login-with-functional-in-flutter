@@ -61,6 +61,7 @@ class _registrationState extends State<registration> {
                       },
                     ),
                     TextFormField(
+                      keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                           hintText: "NUB ID",
                           labelText: "Enter your NUB ID"
